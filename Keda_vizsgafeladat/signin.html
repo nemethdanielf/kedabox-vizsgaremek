@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bejelentkezés</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- bootstrap core css -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <!-- fonts style -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Itt van a CSS fájlod -->
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        color: #040000;
+        margin: 0;
+        padding: 0;
+        background-color: #63f74f;
+      }
+
+      .hero_area {
+        height: 100vh;
+        background-image: url(../images/hero-bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero_area::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          transparent,
+          #63f74f
+        );
+        z-index: 1;
+      }
+
+      .signin-container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        width: 350px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 2; /* A form legyen a háttéren felül */
+      }
+
+      .signin-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 28px;
+        color: #010201;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .input-field {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #000000;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      .btn:hover {
+        background-color: #63f74f;
+        color: #000;
+      }
+
+      .forgot-password {
+        text-align: center;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+
+      .forgot-password a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .forgot-password a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero_area">
+      <div class="signin-container">
+        <h2>Bejelentkezés</h2>
+        <form id="loginForm" action="/login" method="POST">
+          <input
+            type="email"
+            name="email"
+            class="input-field"
+            placeholder="E-mail cím"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            class="input-field"
+            placeholder="Jelszó"
+            required
+          />
+          <button type="submit" class="btn">Bejelentkezés</button>
+        </form>
+        <div class="forgot-password">
+          <p>Nincs fiókod?</p>
+          <a href="register.html">Regisztráció</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript for form validation -->
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          // Prevent the default form submission
+          event.preventDefault();
+
+          // Get the form data
+          const email = document.querySelector('[name="email"]').value;
+          const password = document.querySelector('[name="password"]').value;
+
+          // Simple client-side validation
+          if (!email || !password) {
+            alert("Kérlek, töltsd ki az összes mezőt!");
+            return;
+          }
+
+          // Simulate sending data to the server
+          console.log("Bejelentkezési próbálkozás:", { email, password });
+
+          
+        });
+    </script>
+  </body>
+</html>
