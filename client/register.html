@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regisztráció</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- bootstrap core css -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <!-- fonts style -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Itt van a CSS fájlod -->
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        color: #040000;
+        margin: 0;
+        padding: 0;
+        background-color: #63f74f;
+      }
+
+      .hero_area {
+        height: 100vh;
+        background-image: url(../images/hero-bg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero_area::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          transparent,
+          #63f74f
+        );
+        z-index: 1;
+      }
+
+      .signin-container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        width: 350px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 2; /* A form legyen a háttéren felül */
+      }
+
+      .signin-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 28px;
+        color: #010201;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .input-field {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #000000;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      .btn:hover {
+        background-color: #63f74f;
+        color: #000;
+      }
+
+      .forgot-password {
+        text-align: center;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+
+      .forgot-password a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .forgot-password a:hover {
+        text-decoration: underline;
+      }
+
+      .navbar .dropdown-menu {
+        z-index: 9999;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <div class="header_nav">
+          <a class="navbar-brand brand_desktop" href="index.html">
+            <img alt="" src="images/Kedaforheader.jpg" />
+          </a>
+          <div class="main_nav">
+            <div class="top_nav">
+              <ul class="">
+                <li class="">
+                  <a class="" href="#contact_section">
+                    <img alt="" src="images/telephone.png" />
+                    <span> +36204056950</span>
+                  </a>
+                </li>
+                <li class="">
+                  <a class="" href="#contact_section">
+                    <img alt="" src="images/mail.png" />
+                    <span>BoxingKeDa@gmail.com</span>
+                  </a>
+                </li>
+                <li class="">
+                  <a class="" href="#contact_section">
+                    <img alt="" src="images/location.png" />
+                    <span>Magyarország</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="bottom_nav">
+              <nav class="navbar navbar-expand-lg custom_nav-container">
+                <a class="navbar-brand brand_mobile" href="index.html">
+                  <img alt="" src="images/logo.png" />
+                </a>
+                <button
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                  class="navbar-toggler"
+                  data-target="#navbarSupportedContent"
+                  data-toggle="collapse"
+                  type="button"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                    <ul class="navbar-nav">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Kezdőlap <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="about.html"> Rólunk </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="class.html"> Edzések </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                      </li>
+    
+                      <!-- Bejelentkezés gomb (csak ha nincs token) -->
+                      <li class="nav-item" id="loginNavItem">
+                        <a class="nav-link" href="signin.html">Bejelentkezés</a>
+                      </li>
+    
+                      <!-- Profil link (csak ha be van jelentkezve) -->
+                      <li class="nav-item" id="userProfileNav" style="display: none;">
+                        <a class="nav-link" href="profile.html">
+                          Üdv, <span id="usernameDisplay">Felhasználó</span>
+                        </a>
+                      </li>
+    
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+      
+    <div class="hero_area">
+      <div class="signin-container">
+        <h2>Regisztráció</h2>
+        <form id="registerForm">
+          <input
+            type="text"
+            name="fullname"
+            id="regFullname"
+            class="input-field"
+            placeholder="Teljes név"
+            required
+          />
+          <input
+            type="text"
+            name="username"
+            id="regUsername"
+            class="input-field"
+            placeholder="Felhasználónév"
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            id="regEmail"
+            class="input-field"
+            placeholder="E-mail cím"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            id="regPassword"
+            class="input-field"
+            placeholder="Jelszó"
+            required
+          />
+          <input
+            type="password"
+            name="confirm_password"
+            id="regConfirm"
+            class="input-field"
+            placeholder="Jelszó megerősítése"
+            required
+          />
+          <button type="submit" class="btn">Regisztráció</button>
+        </form>
+        <div class="forgot-password">
+          <p>Már van fiókod?</p>
+          <a href="signin.html">Bejelentkezés</a> <br>
+          <a href="index.html">Vissza a főoldalra.</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript for form validation -->
+    <script src="js/auth.js"></script>
+    <script src="js/header.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsonwebtoken/dist/jsonwebtoken.min.js"></script>
+  </body>
+</html>

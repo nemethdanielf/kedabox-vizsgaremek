@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin – Visszahívások</title>
+    <!-- slider stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet" type="text/css"/>
+    <!-- bootstrap core css -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&amp;display=swap" rel="stylesheet"/>
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet"/>
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet"/>
+  <style>
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ccc;
+    }
+    th {
+      background: #63f74f;
+      color: black;
+      text-align: left;
+    }
+    td {
+      vertical-align: top;
+    }
+  </style>
+</head>
+<body>
+    <header class="header_section">
+        <div class="container">
+          <div class="header_nav">
+            <a class="navbar-brand brand_desktop" href="index.html">
+              <img alt="" src="images/Kedaforheader.jpg" />
+            </a>
+            <div class="main_nav">
+              <div class="top_nav">
+                <ul class="">
+                  <li class="">
+                    <a class="" href="#contact_section">
+                      <img alt="" src="images/telephone.png" />
+                      <span> +36204056950</span>
+                    </a>
+                  </li>
+                  <li class="">
+                    <a class="" href="#contact_section">
+                      <img alt="" src="images/mail.png" />
+                      <span>BoxingKeDa@gmail.com</span>
+                    </a>
+                  </li>
+                  <li class="">
+                    <a class="" href="#contact_section">
+                      <img alt="" src="images/location.png" />
+                      <span>Magyarország</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="bottom_nav">
+                <nav class="navbar navbar-expand-lg custom_nav-container">
+                  <a class="navbar-brand brand_mobile" href="index.html">
+                    <img alt="" src="images/logo.png" />
+                  </a>
+                  <button
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-target="#navbarSupportedContent"
+                    data-toggle="collapse"
+                    type="button"
+                  >
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                      <ul class="navbar-nav">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="index.html">Kezdőlap <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="about.html"> Rólunk </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="class.html"> Edzések </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="blog.html">Blog</a>
+                        </li>
+      
+                        <!-- Bejelentkezés gomb (csak ha nincs token) -->
+                        <li class="nav-item" id="loginNavItem">
+                          <a class="nav-link" href="signin.html">Bejelentkezés</a>
+                        </li>
+      
+                        <!-- Profil link (csak ha be van jelentkezve) -->
+                        <li class="nav-item" id="userProfileNav" style="display: none;">
+                          <a class="nav-link" href="profile.html">
+                            Üdv, <span id="usernameDisplay">Felhasználó</span>
+                          </a>
+                        </li>
+      
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+  <div class="container">
+    <h1>📞 Visszahívási kérések</h1>
+    <button id="exportCSV" class="btn btn-success" style="margin-bottom: 20px;">
+        📁 Exportálás CSV-be
+    </button>
+    <table id="callbackTable">
+      <thead>
+        <tr>
+          <th>Név</th>
+          <th>Telefonszám</th>
+          <th>Üzenet</th>
+          <th>Dátum</th>
+          <th>Státusz</th>
+          <th>Törlés</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- JavaScript tölti be -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="js/admin.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

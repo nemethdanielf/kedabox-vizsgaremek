@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Profilom – KeDa Boxing</title>
+
+    <!-- Styles -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&display=swap" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+    <style>
+      .container.profile-box {
+        max-width: 600px;
+        margin: 60px auto;
+        padding: 30px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .input-field {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        }
+
+      .profile-box h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-weight: bold;
+      }
+
+      .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        padding: 12px;
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: #63f74f;
+        color: #000;
+      }
+
+      .btn-danger {
+        background-color: #dc3545;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header_section">
+      <div class="container">
+        <div class="header_nav">
+          <a class="navbar-brand brand_desktop" href="index.html">
+            <img alt="" src="images/Kedaforheader.jpg" />
+          </a>
+          <div class="main_nav">
+            <div class="top_nav">
+              <ul class="">
+                <li>
+                  <a href="#contact_section"><img src="images/telephone.png" /><span> +36204056950</span></a>
+                </li>
+                <li>
+                  <a href="#contact_section"><img src="images/mail.png" /><span>BoxingKeDa@gmail.com</span></a>
+                </li>
+                <li>
+                  <a href="#contact_section"><img src="images/location.png" /><span>Magyarország</span></a>
+                </li>
+              </ul>
+            </div>
+            <div class="bottom_nav">
+              <nav class="navbar navbar-expand-lg custom_nav-container">
+                <a class="navbar-brand brand_mobile" href="index.html"><img src="images/logo.png" alt="" /></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                    <ul class="navbar-nav">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Kezdőlap</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="about.html"> Rólunk </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="class.html"> Edzések </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                      </li>
+                      <li class="nav-item" id="loginNavItem">
+                        <a class="nav-link" href="signin.html">Bejelentkezés</a>
+                      </li>
+                      <li class="nav-item" id="userProfileNav" style="display: none;">
+                        <a class="nav-link" href="profile.html">
+                          Üdv, <span id="usernameDisplay">Felhasználó</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Profil tartalom -->
+    <div class="container profile-box">
+      <h1>Profil beállítások</h1>
+      <p><strong>Felhasználónév:</strong> <span id="profileUsername"></span></p>
+
+      <div id="adminPanelContainer" style="display: none;">
+        <a href="admin.html" class="btn">Admin Panel</a>
+      </div>
+
+      <a href="#" id="changePasswordBtn" class="btn">Jelszó megváltoztatása</a>
+      <form id="changePasswordForm">
+        <h4>Jelszó megváltoztatása</h4>
+        <input type="password" id="oldPassword" placeholder="Régi jelszó" class="input-field" required />
+        <input type="password" id="newPassword" placeholder="Új jelszó" class="input-field" required />
+        <input type="password" id="confirmNewPassword" placeholder="Új jelszó megerősítése" class="input-field" required />
+        <button type="submit" class="btn">Jelszó módosítása</button>
+      </form>
+      <a href="#" id="logoutBtn" class="btn btn-danger">Kijelentkezés</a>
+    </div>
+
+    <!-- JS -->
+    <script src="js/header.js"></script>
+    <script src="js/profile.js"></script>
+  </body>
+</html>
