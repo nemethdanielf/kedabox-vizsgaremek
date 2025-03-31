@@ -216,6 +216,38 @@
       </div>
     </section>
     <!-- end class section -->
+    <div class="row mt-5">
+      <div class="col-md-8 mx-auto">
+        <div class="heading_container">
+          <h2>Foglalj edzést!</h2>
+          <p>Töltsd ki az alábbi űrlapot és lefoglaljuk neked az edzést.</p>
+        </div>
+        <form id="bookingForm">
+          <div class="form-group">
+            <label for="training_type">Edzés típusa</label>
+            <select id="training_type" class="form-control" required>
+              <option value="">Válassz edzést...</option>
+              <option value="Kezdő box">Kezdő box</option>
+              <option value="Haladó technika">Haladó technika</option>
+              <option value="Kondíciós edzés">Kondíciós edzés</option>
+            </select>
+          </div>
+    
+          <div class="form-group">
+            <label for="training_date">Dátum</label>
+            <input type="date" id="training_date" class="form-control" required />
+          </div>
+    
+          <div class="form-group">
+            <label for="training_time">Időpont</label>
+            <input type="time" id="training_time" class="form-control" required />
+          </div>
+    
+          <button type="submit" class="btn btn-dark btn-block mt-3">Lefoglalás</button>
+        </form>
+      </div>
+    </div>
+    <br>
     <!-- info section -->
     <div class="info_section">
       <div class="container-fluid">
@@ -264,15 +296,18 @@
                 </section>
                 <!-- footer section -->
               </div>
-              <div class="col-md-6 px-0">
-                <div class="img-box">
-                  <img alt="" src="images/footer-img.jpg" />
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>
       </div>
+      <footer class="custom_footer">
+        <div class="container text-center">
+          <h3 class="footer-title">KedaBoxing</h3>
+          <p class="footer-text">Copyright &copy; 2025</p>
+          <p class="footer-text">Készítette: Vámosi Kevin & Németh Dániel</p>
+        </div>
+      </footer>
     </div>
     <!-- end info section -->
     <script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
@@ -351,5 +386,6 @@
     <!-- End Google Map -->
     <script src="js/header.js"></script>
     <script src="js/callbackForm.js"></script>
+    <script src="js/bookings.js"></script>
   </body>
 </html>

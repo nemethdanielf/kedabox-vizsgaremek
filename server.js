@@ -9,23 +9,37 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Köztes middleware-ek
 app.use(cors());
 app.use(express.json());
 
-// ========== API-k bekötése (később jönnek) ==========
-// Példa: app.use('/api/auth', require('./auth'));
+// ========== API-k bekötése ==========
 
-app.use('/api/callback', require('./routes/callback'));
+// Auth (login, register, jelszóváltás)
+const authRoutes = require('./routes/auth');
+app.use('/api/auth', authRoutes);
 
-// ========== Statikus fájlok kiszolgálása ==========
-// A "client" mappa tartalmazza az összes frontend fájlt (HTML, CSS, JS)
+// Admin callback-kezelés (státusz, törlés, export)
+const adminRoutes = require('./routes/admin');
+app.use('/api/admin', adminRoutes);
+
+// Callback request (visszahívás kérések)
+const callbackRoutes = require('./routes/callback');
+app.use('/api/callback', callbackRoutes);
+
+// Bookings (edzésfoglalás)
+const bookingRoutes = require('./routes/bookings');
+app.use('/api/bookings', bookingRoutes);
+
+// ========== Statikus fájlok kiszolgálása (frontend) ==========
 app.use(express.static(path.join(__dirname, 'client')));
+
+// ❗️FONTOS: Ez legyen a legvégén, hogy ne nyomja el az API-kat
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client', 'index.html'));
 });
 
 // ========== Adatbázis kapcsolat tesztelése ==========
-// Ez segít hibakereséskor, hogy a MySQL működik-e
 async function testDbConnection() {
   try {
     const [rows] = await db.query('SELECT 1');
@@ -35,17 +49,6 @@ async function testDbConnection() {
   }
 }
 testDbConnection();
-
-const authRoutes = require('./routes/auth'); // 🔗 Auth API bekötése
-app.use('/api/auth', authRoutes); // ⬅️ Auth route használata
-
-const adminRoutes = require('./routes/admin');
-app.use('/api/admin', adminRoutes);
-
-const callbackRoutes = require('./routes/callback');
-app.use('/api/callback', callbackRoutes);
-
-
 
 // ========== Szerver indítása ==========
 app.listen(PORT, () => {
